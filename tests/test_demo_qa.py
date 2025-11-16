@@ -56,7 +56,8 @@ def test_demo_qa():
     browser.element('#react-select-4-input').type('Delhi').press_enter()
 
     # Отправляем форму
-    browser.element('#submit').click()
+    el_submit = browser.element('#submit').locate()
+    browser.driver.execute_script("arguments[0].click();", el_submit)
 
     # Проверки модального окна
     browser.element('.modal-content').should(be.visible)
