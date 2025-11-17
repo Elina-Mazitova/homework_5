@@ -40,7 +40,7 @@ def test_demo_qa():
     browser.driver.execute_script("arguments[0].click();", el2)
 
     # Загружаем файл
-    file_path = os.path.abspath('tests/file_resource.jpg')
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'file_resource.jpg'))
     browser.element('#uploadPicture').set_value(file_path)
 
     # Адрес
